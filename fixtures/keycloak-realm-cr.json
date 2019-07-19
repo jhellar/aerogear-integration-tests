@@ -24,7 +24,7 @@
           "*"
         ],
         "redirectUris": [
-          "http://localhost:*"
+          "*"
         ],
         "standardFlowEnabled": true,
         "enabled": true,
