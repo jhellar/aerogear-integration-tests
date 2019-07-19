@@ -25,20 +25,20 @@ before('Wait for cordova device ready', async function() {
   });
 });
 
-before('connect to postgres', async function() {
-  global.postgres = new Client({
-    host: process.env.PGHOST,
-    user: process.env.PGUSER,
-    password: process.env.PGPASSWORD,
-    database: process.env.PGDATABASE
-  });
+// before('connect to postgres', async function() {
+//   global.postgres = new Client({
+//     host: process.env.PGHOST,
+//     user: process.env.PGUSER,
+//     password: process.env.PGPASSWORD,
+//     database: process.env.PGDATABASE
+//   });
 
-  await global.postgres.connect();
-});
+//   await global.postgres.connect();
+// });
 
-before('reset metrics db', async function() {
-  await postgres.query('DELETE FROM mobileappmetrics');
-});
+// before('reset metrics db', async function() {
+//   await postgres.query('DELETE FROM mobileappmetrics');
+// });
 
 
 before('Initialize aerogear-js-sdk', async function() {
@@ -52,6 +52,6 @@ after('Close appium session', async function() {
   await client.deleteSession();
 });
 
-after('close postgres connection', async function() {
-  await postgres.end();
-});
+// after('close postgres connection', async function() {
+//   await postgres.end();
+// });
