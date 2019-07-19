@@ -1,4 +1,4 @@
-const keycloakUrl = `https://${process.env.KEYCLOAK_HOST}:${process.env.KEYCLOAK_PORT}`;
+const keycloakUrl = `https://${process.env.KEYCLOAK_HOST}:${process.env.KEYCLOAK_PORT}/auth`;
 const syncUrl = `${process.env.SYNC_HOST}:${process.env.SYNC_PORT}/graphql`;
 const metricsUrl = `http://${process.env.METRICS_HOST}:${process.env.METRICS_PORT}/metrics`;
 const upsUrl = `http://${process.env.UPS_HOST}:${process.env.UPS_PORT}`;
@@ -14,7 +14,7 @@ const config = {
       "type": "keycloak",
       "url": keycloakUrl,
       "config": {
-        "realm": "integration",
+        "realm": "test",
         "auth-server-url": keycloakUrl,
         "ssl-required": "none",
         "resource": "test",
