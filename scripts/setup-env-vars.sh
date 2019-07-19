@@ -1,5 +1,6 @@
 if [ "$CI" = "true" ]; then
-  export KEYCLOAK_HOST=keycloak
+  [ -z "$KEYCLOAK_HOST" ] && export KEYCLOAK_HOST=keycloak
+
   export METRICS_HOST=metrics
   export PGHOST=metricsdb
   
@@ -15,7 +16,8 @@ else
   export PGHOST=localhost
 fi
 
-export KEYCLOAK_PORT=8080
+[ -z "$KEYCLOAK_PORT" ] && export KEYCLOAK_PORT=8080
+
 export METRICS_PORT=3000
 
 export PGUSER=metrics

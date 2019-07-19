@@ -1,0 +1,60 @@
+{
+  "apiVersion": "aerogear.org/v1alpha1",
+  "kind": "KeycloakRealm",
+  "metadata": {
+    "name": "test",
+    "labels": {
+      "mobile.aerogear.org/client": "test"
+    }
+  },
+  "spec": {
+    "id": "test",
+    "realm": "test",
+    "displayName": "Realm for mobile app test",
+    "enabled": true,
+    "createOnly": true,
+    "clients": [
+      {
+        "name": "test",
+        "clientId": "test",
+        "publicClient": true,
+        "bearerOnly": false,
+        "webOrigins": [
+          "http://localhost:8100",
+          "*"
+        ],
+        "redirectUris": [
+          "http://localhost:*"
+        ],
+        "standardFlowEnabled": true,
+        "enabled": true,
+        "outputSecret": "test-install-config"
+      }
+    ],
+    "users": [
+      {
+        "username": "test",
+        "password": "123",
+        "outputSecret": "test-admin-pass",
+        "enabled": true,
+        "emailVerified": false,
+        "firstName": "",
+        "lastName": "",
+        "email": "",
+        "realmRoles": [
+          "offline_access",
+          "uma_authorization"
+        ],
+        "clientRoles": {
+          "account": [
+            "manage-account",
+            "view-profile"
+          ],
+          "realm-management": [
+            "realm-admin"
+          ]
+        }
+      }
+    ]
+  }
+}
