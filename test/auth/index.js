@@ -9,16 +9,16 @@ describe('Auth', function() {
 
   let mainWindow;
 
-  // before('setup test realm', async function() {
-  //   mainWindow = await client.getWindowHandle();
-  //   const config = mobileServices.services.find(service => service.name === 'keycloak');
-  //   await prepareKeycloak(config.url)
-  // });
+  before('setup test realm', async function() {
+    mainWindow = await client.getWindowHandle();
+    // const config = mobileServices.services.find(service => service.name === 'keycloak');
+    // await prepareKeycloak(config.url)
+  });
 
-  // after('remove test realm', async function() {
-  //   await client.switchToWindow(mainWindow);
-  //   await resetKeycloakConfiguration();
-  // });
+  after('remove test realm', async function() {
+    await client.switchToWindow(mainWindow);
+    // await resetKeycloakConfiguration();
+  });
 
   it('should not login with incorrect credentials', async function() {
     client.execute(() => {
